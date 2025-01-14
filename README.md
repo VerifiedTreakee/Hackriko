@@ -1,12 +1,16 @@
-
 #  Hackriko
 
 Hackriko is a simple, terminal-based hand cricket game written in Python. It allows players to engage in a fun and nostalgic hand cricket match with the computer.
+
+
 
 ## Features
 - **Lightweight Codebase:** No external libraries or dependencies required.
 - **Custom Rules:** Implements basic hand cricket rules for casual play.
 - **Turn-based Gameplay:** Play hand cricket against the computer.
+
+
+
 
 
 ## Installation
