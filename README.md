@@ -12,7 +12,7 @@ Hacricko is a Python-based game inspired by the childhood Indian game of "Odd or
 
 1. Clone this repository:
    ```bash
-   git clone (https://github.com/VerifiedTreakee/Hackriko.git)
+   git clone https://github.com/VerifiedTreakee/Hackriko.git
 ---
 
 ## **How to Play**
