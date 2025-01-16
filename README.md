@@ -2,7 +2,7 @@
 ## **OPEN SOURCE UNDER**
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
--
+---
 # **Hacricko - Relive your school days**
 
 Hacricko is a Python-based game inspired by the childhood Indian game of "Odd or Even," a cricket variant akin to rock-paper-scissors. Players engage in a toss to decide who bats or bowls first, then compete to score the highest runs without getting bowled out.
