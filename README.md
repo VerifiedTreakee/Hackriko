@@ -4,7 +4,7 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 -
-# **Hacricko - Relive your School Days**
+# **Hacricko - Relive your school days**
 
 Hacricko is a Python-based game inspired by the childhood Indian game of "Odd or Even," a cricket variant akin to rock-paper-scissors. Players engage in a toss to decide who bats or bowls first, then compete to score the highest runs without getting bowled out.
 
@@ -108,6 +108,13 @@ Hacricko is a Python-based game inspired by the childhood Indian game of "Odd or
 - If the game exits unexpectedly, rerun the program to restart.
 
 ---
+
+
+## Authors
+
+- Original idea by [@Suvro Bhowmick](https://github.com/Elitsuv)
+- Codded and maintained by [@Verified Treakee](https://github.com/VerifiedTreakee)
+
 
 
 ## Coming soon!
