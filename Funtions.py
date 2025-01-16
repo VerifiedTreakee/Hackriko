@@ -79,11 +79,7 @@ def C_toss():
         pl = 2
     else:
         print("Computer choose Odd")
-        pl = 1
-
-    
-    com_toss = random.randint(1, 6)
-    print("Computer:", com_toss)
+        pl = 1    
     
     while True:
         try:
@@ -94,6 +90,9 @@ def C_toss():
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 6.")
 
+    com_toss = random.randint(1, 6)
+    print("Computer:", com_toss)
+    
     if (pl_toss + com_toss) % 2 == 0:
         t = 1
     else:
@@ -126,5 +125,5 @@ def C_toss():
         else:
             p_choice = "Batting"
         print(f"Computer won the toss and chooses: {c_choice}")
-        
+
     return p_choice,c_choice
