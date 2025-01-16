@@ -67,6 +67,9 @@ while True:
                     elif sum(Comp_Score) > sum(Player_Score):
                         print("Computer won")
                         break
+                    elif sum(Player_Score) == sum(Comp_Score):
+                        print("Match Draw")
+                        break
                 except ValueError:
                     print("Invalid Input. Please try again.")
 
@@ -106,6 +109,9 @@ while True:
                         break
                     elif sum(Player_Score) > sum(Comp_Score):
                         print("Player won")
+                        break
+                    elif sum(Player_Score) == sum(Comp_Score):
+                        print("Match Draw")
                         break
                 except ValueError:
                     print("Invalid Input. Please try again.")
