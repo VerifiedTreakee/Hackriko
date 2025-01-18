@@ -6,15 +6,11 @@ def display_scoreboard(runs, wickets):
     print(f"Score: {runs}/{wickets}")
 
 while True:
-    print("=" * 30)
-    print(" " * 7 + "Hacricko version beta version 1.0")
-    print("=" * 30)
-    print(" " * 10 + "---Menu---")
-    print("=" * 30)
+    print("Hacricko version idk")
+    print("---Menu---")
     print("1. To start new game")
     print("2. See previous Scores")
     print("3. Exit")
-    print("=" * 30)
 
     try:
         menu = int(input("Enter a choice: "))
@@ -33,9 +29,9 @@ while True:
                 print("Invalid Input. Please Enter 1 for you to start or 2 for computer to start!")
 
         if P == 1:
-            p_choice, c_choice = P_toss()
+            p_choice, c_choice, n = P_toss()
         else:
-            p_choice, c_choice = C_toss()
+            p_choice, c_choice, n = C_toss()
 
         print("Starting Game")
         Player_Score = []
@@ -77,7 +73,7 @@ while True:
                     if Computer == Player:
                         print("Out!")
                         comp_wickets += 1
-                        if comp_wickets >= 10:
+                        if comp_wickets >= n:
                             print("All out!")
                             break
                     else:
@@ -129,7 +125,7 @@ while True:
                     if Player == Computer:
                         print("Out!")
                         player_wickets += 1
-                        if player_wickets >= 10:
+                        if player_wickets >= n:
                             print("All out!")
                             break
                     else:
