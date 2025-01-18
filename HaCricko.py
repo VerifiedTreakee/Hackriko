@@ -2,6 +2,9 @@ import random
 import sys
 from Funtions import P_toss, C_toss
 
+def display_scoreboard(runs, wickets):
+    print(f"Score: {runs}/{wickets}")
+
 while True:
     print("Hacricko version idk")
     print("---Menu---")
@@ -33,6 +36,10 @@ while True:
         print("Starting Game")
         Player_Score = []
         Comp_Score = []
+        player_runs = 0
+        player_wickets = 0
+        comp_runs = 0
+        comp_wickets = 0
 
         if p_choice == 'Batting':
             while True:
@@ -45,26 +52,35 @@ while True:
                     print("Computer:", Computer)
 
                     if Player == Computer:
-                        print("Bold \nComputer's turn")
+                        print("Out! \nComputer's turn")
                         print("Target:", sum(Player_Score) + 1)
                         break
+                    else:
+                        player_runs += Player
+                        display_scoreboard(player_runs, player_wickets)
                 except ValueError:
                     print("Invalid Input. Please try again.")
 
             while True:
-                Computer = random.randint(1, 6)
-                print("Computer:", Computer)
-                Comp_Score.append(Computer)
-
                 try:
                     Player = int(input("Enter your number (1-6): "))
                     if Player not in [1, 2, 3, 4, 5, 6]:
                         raise ValueError
+                    Computer = random.randint(1, 6)
+                    print("Computer:", Computer)
+                    Comp_Score.append(Computer)
+
                     if Computer == Player:
-                        print("Bold")
-                        print("Player Won")
-                        break
-                    elif sum(Comp_Score) > sum(Player_Score):
+                        print("Out!")
+                        comp_wickets += 1
+                        if comp_wickets >= 10:
+                            print("All out!")
+                            break
+                    else:
+                        comp_runs += Computer
+                        display_scoreboard(comp_runs, comp_wickets)
+
+                    if sum(Comp_Score) > sum(Player_Score):
                         print("Computer won")
                         break
                     elif sum(Player_Score) == sum(Comp_Score):
@@ -88,9 +104,12 @@ while True:
                     Comp_Score.append(Computer)
 
                     if Player == Computer:
-                        print("Bold \nPlayer's turn")
+                        print("Out! \nPlayer's turn")
                         print("Target:", sum(Comp_Score) + 1)
                         break
+                    else:
+                        comp_runs += Computer
+                        display_scoreboard(comp_runs, comp_wickets)
                 except ValueError:
                     print("Invalid Input. Please try again.")
 
@@ -104,10 +123,16 @@ while True:
                     print("Computer:", Computer)
 
                     if Player == Computer:
-                        print("Bold")
-                        print("Computer Won")
-                        break
-                    elif sum(Player_Score) > sum(Comp_Score):
+                        print("Out!")
+                        player_wickets += 1
+                        if player_wickets >= 10:
+                            print("All out!")
+                            break
+                    else:
+                        player_runs += Player
+                        display_scoreboard(player_runs, player_wickets)
+
+                    if sum(Player_Score) > sum(Comp_Score):
                         print("Player won")
                         break
                     elif sum(Player_Score) == sum(Comp_Score):
