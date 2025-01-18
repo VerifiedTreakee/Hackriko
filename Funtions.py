@@ -39,6 +39,16 @@ def P_toss():
 
     if t == pl:
         print("Player won the toss")
+
+        while True:
+            try:
+                n = int(input("Select no of wickets (1-5): "))
+                if c not in [1, 2,3,4,5]:
+                    raise ValueError
+                break
+            except ValueError:
+                print("Invalid input. Please enter within 1-5.")
+
         while True:
             try:
                 c = int(input("Type '1' for Batting or '2' for Bowling: "))
@@ -66,12 +76,13 @@ def P_toss():
         print(f"Computer won the toss and chooses: {c_choice}")
 
 
-    return p_choice,c_choice
+    return p_choice,c_choice,n
 
 def C_toss():
 
     print("Computer starts the game")
     x = random.randint(1,2)
+    n = random.randint(1,5)
 
     if x == 1:
         
@@ -79,7 +90,10 @@ def C_toss():
         pl = 2
     else:
         print("Computer choose Odd")
-        pl = 1    
+        pl = 1
+
+    
+    
     
     while True:
         try:
@@ -126,4 +140,5 @@ def C_toss():
             p_choice = "Batting"
         print(f"Computer won the toss and chooses: {c_choice}")
 
-    return p_choice,c_choice
+
+    return p_choice,c_choice,n
