@@ -6,11 +6,15 @@ def display_scoreboard(runs, wickets):
     print(f"Score: {runs}/{wickets}")
 
 while True:
-    print("Hacricko version idk")
-    print("---Menu---")
+    print("=" * 30)
+    print(" " * 7 + "Hacricko version beta version 1.0")
+    print("=" * 30)
+    print(" " * 10 + "---Menu---")
+    print("=" * 30)
     print("1. To start new game")
     print("2. See previous Scores")
     print("3. Exit")
+    print("=" * 30)
 
     try:
         menu = int(input("Enter a choice: "))
