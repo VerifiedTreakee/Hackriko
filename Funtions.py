@@ -18,7 +18,6 @@ def P_toss():
     else:
         print("Player chooses Odd")
 
-
     while True:
         try:
             pl_toss = int(input("Enter choice (1-6): "))
@@ -42,41 +41,24 @@ def P_toss():
 
         while True:
             try:
-                n = int(input("Select no of wickets (1-5): "))
-                if c not in [1, 2,3,4,5]:
-                    raise ValueError
-                break
-            except ValueError:
-                print("Invalid input. Please enter within 1-5.")
-
-        while True:
-            try:
-                c = int(input("Type '1' for Batting or '2' for Bowling: "))
-                if c not in [1, 2]:
+                decision = int(input("Type '1' for Batting or '2' for Bowling: "))
+                if decision not in [1, 2]:
                     raise ValueError
                 break
             except ValueError:
                 print("Invalid input. Please enter '1' for Batting or '2' for Bowling.")
 
-        if c == 1:
-            p_choice = 'Batting'
-            c_choice = 'Bowling'
+        if decision == 1:
+            print("Player chooses to Bat")
+            return 'Batting', 'Bowling'
         else:
-            p_choice = 'Bowling'
-            c_choice = 'Batting'
-
-        print(f"Player won the toss and chooses: {p_choice}")       
+            print("Player chooses to Bowl")
+            return 'Bowling', 'Batting'
     else:
-        cc = ["Batting", "Bowling"]
-        c_choice = random.choice(cc)
-        if c_choice == "Batting":
-            p_choice = "Bowling"
-        else:
-            p_choice = "Batting"
-        print(f"Computer won the toss and chooses: {c_choice}")
-
-
-    return p_choice,c_choice,n
+        print("Computer won the toss")
+        com_decision = random.choice(['Batting', 'Bowling'])
+        print(f"Computer chooses to {com_decision}")
+        return com_decision, 'Batting' if com_decision == 'Bowling' else 'Bowling'
 
 def C_toss():
 
@@ -92,9 +74,6 @@ def C_toss():
         print("Computer choose Odd")
         pl = 1
 
-    
-    
-    
     while True:
         try:
             pl_toss = int(input("Enter choice (1-6): "))
@@ -139,6 +118,5 @@ def C_toss():
         else:
             p_choice = "Batting"
         print(f"Computer won the toss and chooses: {c_choice}")
-
 
     return p_choice,c_choice,n
