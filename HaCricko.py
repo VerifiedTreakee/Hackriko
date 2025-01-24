@@ -66,6 +66,7 @@ while True:
                     Player = int(input("Enter your number (1-6): "))
                     if Player not in [1, 2, 3, 4, 5, 6]:
                         raise ValueError
+                    
                     Computer = random.randint(1, 6)
                     print("Computer:", Computer)
                     Comp_Score.append(Computer)
@@ -80,12 +81,10 @@ while True:
                         comp_runs += Computer
                         display_scoreboard(comp_runs, comp_wickets)
 
-                    if sum(Comp_Score) > sum(Player_Score):
+                    if sum(Comp_Score) > sum(Player_Score)+1:
                         print("Computer won")
                         break
-                    elif sum(Player_Score) == sum(Comp_Score):
-                        print("Match Draw")
-                        break
+
                 except ValueError:
                     print("Invalid Input. Please try again.")
 
@@ -132,12 +131,10 @@ while True:
                         player_runs += Player
                         display_scoreboard(player_runs, player_wickets)
 
-                    if sum(Player_Score) > sum(Comp_Score):
+                    if sum(Player_Score) > sum(Comp_Score)+1:
                         print("Player won")
                         break
-                    elif sum(Player_Score) == sum(Comp_Score):
-                        print("Match Draw")
-                        break
+
                 except ValueError:
                     print("Invalid Input. Please try again.")
 
