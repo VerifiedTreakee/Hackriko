@@ -11,6 +11,7 @@ while True:
     print("1. To start new game")
     print("2. See previous Scores")
     print("3. Exit")
+    print("4. Practice")  # Added Practice option
 
     try:
         menu = int(input("Enter a choice: "))
@@ -146,6 +147,50 @@ while True:
         print("Feature not implemented yet.")
     elif menu == 3:
         sys.exit("Exiting the program.")
+    elif menu == 4:  # Practice feature implementation (beta)
+        print("Starting Practice Mode")
+        practice_mode = int(input("Press 1 for Batting Practice, 2 for Bowling Practice: "))
+        
+        if practice_mode == 1:  # Batting Practice
+            print("Batting Practice started! No limits.")
+            player_runs = 0
+            player_wickets = 0
+            while True:
+                try:
+                    Player = int(input("Enter your number (1-6): "))
+                    if Player not in [1, 2, 3, 4, 5, 6]:
+                        raise ValueError
+                    player_runs += Player
+                    print("Player runs:", player_runs)
+                    display_scoreboard(player_runs, player_wickets)
+                except ValueError:
+                    print("Invalid Input. Please try again.")
+                    
+        elif practice_mode == 2:  # Bowling Practice
+            print("Bowling Practice started! You have 5 wickets.")
+            bowled_runs = 0
+            player_wickets = 0
+            while player_wickets < 5:
+                try:
+                    Player = int(input("Enter the number to bowl (1-6): "))
+                    if Player not in [1, 2, 3, 4, 5, 6]:
+                        raise ValueError
+                    Computer = random.randint(1, 6)
+                    print("Computer:", Computer)
+
+                    if Player == Computer:
+                        print("Out!")
+                        player_wickets += 1
+                    else:
+                        bowled_runs += Computer
+                        display_scoreboard(bowled_runs, player_wickets)
+
+                    if player_wickets >= 5:
+                        print("You have bowled 5 wickets! End of practice.")
+                        break
+                except ValueError:
+                    print("Invalid Input. Please try again.")
+
     else:
         print("Invalid input. Would you like to re-run the game? (y/n)")
         n = input("Enter Choice: ").strip().lower()
