@@ -120,5 +120,4 @@ Hacricko is a Python-based game inspired by the childhood Indian game of "Odd or
 
 - Highest score
 - Game History
-- Suggest many more!
 
