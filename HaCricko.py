@@ -6,7 +6,7 @@ def display_scoreboard(runs, wickets):
     print(f"Score: {runs}/{wickets}")
 
 while True:
-    print("Hacricko version idk")
+    print("Hacricko version 0.5dev")
     print("---Menu---")
     print("1. To start new game")
     print("2. See previous Scores")
