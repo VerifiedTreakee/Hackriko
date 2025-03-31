@@ -2,6 +2,7 @@ import random  # Importing the random module for generating random numbers
 import sys  # Importing sys module for exiting the program
 from Functions import P_toss, C_toss  # Importing toss functions from Functions.py
 from Functions import inputvalidation  # Importing input validation function from Functions.py
+from model import play_batting, play_bowling
 
 while True:
 
@@ -9,9 +10,10 @@ while True:
     print("---Menu---")
     print("1. To start new game")
     print("2. See previous Scores")  # Feature will be added soon
-    print("3. Exit")
+    print("3. Ki")
+    print("4. Exit")
 
-    menu_choice = inputvalidation([1, 2, 3])  # Get the user's menu choice using input validation
+    menu_choice = inputvalidation([1, 2, 3, 4])  # Get the user's menu choice using input validation
 
     if menu_choice == 1:
         # Ask for who starts the game
@@ -350,5 +352,8 @@ while True:
         print("Feature to view previous scores is not implemented yet.")
 
     elif menu_choice == 3:
+        play_batting(10,2)
+        
+    elif menu_choice == 4:
         print("Exiting the program. Goodbye!")
         sys.exit()
